@@ -1,6 +1,13 @@
 package com.store.Store.model;
 
+import jakarta.persistence.*;
+
+@Entity
+@Table(name = "payment")
 public class Payment {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
     private Integer order_id;
     private String payment_type;
