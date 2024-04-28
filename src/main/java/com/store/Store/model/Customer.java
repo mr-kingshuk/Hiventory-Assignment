@@ -12,6 +12,11 @@ public class Customer {
     private String name;
     private Integer balance;
 
+    // Default constructor
+    public Customer() {
+    }
+
+    // Constructor with arguments
     public Customer(String name, Integer balance) {
         this.name = name;
         this.balance = balance;

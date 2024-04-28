@@ -14,6 +14,11 @@ public class Order {
     private Integer billed_amount;
     private Integer paid_amount;
 
+    // Default constructor
+    public Order() {
+    }
+
+    // Constructor with arguments
     public Order(String customer, Boolean is_payment_done, Integer billed_amount, Integer paid_amount) {
         this.customer = customer;
         this.is_payment_done = is_payment_done;

@@ -13,6 +13,11 @@ public class Payment {
     private String payment_type;
     private Integer amount;
 
+    // Default constructor
+    public Payment() {
+    }
+
+    // Constructor with arguments
     public Payment(Integer order_id, String payment_type, Integer amount){
         this.order_id = order_id;
         this.payment_type = payment_type;
