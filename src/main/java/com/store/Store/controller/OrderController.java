@@ -50,37 +50,11 @@ public class OrderController {
     }
 
     @DeleteMapping("/order/{id}")
-    public Message deleteOrder(@PathVariable("id") Integer id){
-        Message msg = new Message();
-        if(!orderRepository.findById(id).equals(Optional.empty())){
+    public boolean deleteOrder(@PathVariable("id") Integer id){
+        if(!orderRepository.findById(id).equals(Optional.empty())) {
             orderRepository.deleteById(id);
-            msg.setState("success");
-            msg.setMsg("Entry row deleted");
-            return msg;
+            return true;
         }
-        msg.setState("failure");
-        msg.setMsg("Entry row not found");
-        return msg;
-    }
-}
-
-class Message{
-    private String state;
-    private String msg;
-
-    public String getState() {
-        return state;
-    }
-
-    public void setState(String state) {
-        this.state = state;
-    }
-
-    public String getMsg() {
-        return msg;
-    }
-
-    public void setMsg(String msg) {
-        this.msg = msg;
+        return false;
     }
 }
